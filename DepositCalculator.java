@@ -4,13 +4,13 @@ import java.io.IOException;
 
 public class DepositCalculator
 {
-    double calculateComplexPercent(double a, double y, int d) {
-        double pay = a * Math.pow((1 + y / 12), 12 * d);
+    double calculateComplexPercent(double amount, double percent, int period) {
+        double pay = amount * Math.pow((1 + percent / 12), 12 * period);
         return roundValue(pay, 2);
     }
 
-    double calculateSimplePercent(double doubleAmount, double doubleYearRate, int depositPeriod) {
-        return roundValue(doubleAmount + doubleAmount * doubleYearRate * depositPeriod, 2);
+    double calculateSimplePercent(double amount, double yearRate, int period) {
+        return roundValue(amount + amount * yearRate * period, 2);
     }
 
     double roundValue(double value, int places) {
